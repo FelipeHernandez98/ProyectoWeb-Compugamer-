@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        
+                    <div class="demo p-4">
+                        <form class="form-search content-search navbar-form" action="#"
+                            method="get">
+                            <div class="input-group">
+                                <input placeholder="Buscar Factura" class="form-control form-text" type="search" name="dato"
+                                    size="30" maxlength="128" required />
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary"><span
+                                            class="icon glyphicon glyphicon-search" aria-hidden="true"></span><i
+                                            class="fa fa-search fa-lg">&nbsp;</i></button>&nbsp;
+                                </span>
+                            </div>
+                        </form> 
+                    </div>
+                    
+                     <div class="p-4 mx-auto"> 
+      <a class="btn btn-secondary" href="/links/clientes">Regresar</a>&nbsp;
+        </div>   
+                    <table class="table table-responsive  table-hover d-flex justify-content-center">
+                        <tr>
+                            <th>Codigo Factura</th>
+                            <th>Fecha</th>
+                            <th>Operacion</th>
+                            
+                            
+                           
+                        
+                        </tr>
+                     {{#each facturas}}
+                      <tr>
+                          <td>{{codigo_factura}}</td>
+                          <td>{{fecha}}</td>
+                          <td><form action="/links/ver_facturas/{{codigo_factura}}" method="get">
+                          <input class ="btn btn-danger" type="submit" id="{{id}}" value="Detalles">
+                          </form></td>
+                         
+                          
+                      </tr>
+
+                     {{/each}}
+                     </table>
+               
+    </div>
+</div>
+
+<style type="text/css"> 
+body{ 
+    
+    overflow: auto !important;
+}
+</style> 
